@@ -1,12 +1,12 @@
 import 'package:flutter/material.dart';
 
-class noweatherbody extends StatelessWidget {
-  const noweatherbody({super.key});
+class Start_wither extends StatelessWidget {
+  const Start_wither({super.key});
 
   @override
   Widget build(BuildContext context) {
     return Container(
-      decoration: BoxDecoration(
+      decoration: const BoxDecoration(
         gradient: LinearGradient(
             begin: Alignment.topCenter,
             end: Alignment.bottomCenter,
@@ -15,9 +15,9 @@ class noweatherbody extends StatelessWidget {
               Color.fromARGB(44, 236, 236, 236)
             ]),
       ),
-      child: Center(
+      child: const Center(
         child: Padding(
-          padding: const EdgeInsets.only(top: 250),
+          padding: EdgeInsets.only(top: 250),
           child: Column(
             children: [
               Text(

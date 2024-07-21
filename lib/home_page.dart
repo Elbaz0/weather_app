@@ -32,15 +32,15 @@ class HomePage extends StatelessWidget {
         ),
         body: BlocBuilder<getWeatherCubit, weather_state>(
           builder: (context, state) {
-            if (state is WeatherLoadedState)
-              return info(
-                  // weathermodel: state.weathermodel,
-                  );
-            else if (state is initialStateweather) {
-              return noweatherbody();
+            if (state is WeathersccessState) {
+              return info();
+            } else if (state is initialStateweather) {
+              return const Start_wither();
+            } else if (state is WeatherLoadedState) {
+              return Center(child: const CircularProgressIndicator());
             } else {
               return Center(
-                  child: Text(
+                  child: const Text(
                 'opps , there was an error',
                 style: TextStyle(fontSize: 30, fontWeight: FontWeight.w700),
               ));

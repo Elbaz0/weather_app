@@ -2,9 +2,9 @@ import 'dart:developer';
 import 'package:dio/dio.dart';
 import 'package:weather_app/model/wither_model.dart';
 
-class service {
+class WitherService {
   final Dio dio;
-  service(this.dio);
+  WitherService(this.dio);
   Future<witherModel> getservice({required String cityname}) async {
     try {
       Response response = await dio.get(

@@ -9,7 +9,7 @@ class info extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     witherModel weathermodel =
-        BlocProvider.of<getWeatherCubit>(context).weathermodel;
+        BlocProvider.of<getWeatherCubit>(context).weathermodel as witherModel;
 
     return Scaffold(
       // appBar: AppBar(),

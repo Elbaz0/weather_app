@@ -5,16 +5,16 @@ import 'package:weather_app/model/wither_model.dart';
 import 'package:weather_app/service/wither_service.dart';
 
 class getWeatherCubit extends Cubit<weather_state> {
-  getWeatherCubit(super.initialStateweather);
+  getWeatherCubit(this.witherService) : super(initialStateweather());
 
-  late witherModel weathermodel;
+  witherModel? weathermodel;
+  WitherService witherService;
 
   getweather({required String cityname}) async {
     emit(WeatherLoadedState());
     try {
-      weathermodel = await service(Dio()).getservice(cityname: cityname);
+      weathermodel = await WitherService(Dio()).getservice(cityname: cityname);
       emit(WeathersccessState());
-      // emit(WeatherLoadedState(weathermodel: weathermodel));
     } catch (e) {
       emit(WeatherFaliurState());
     }
